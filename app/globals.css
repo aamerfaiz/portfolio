@@ -28,3 +28,32 @@ body {
     text-wrap: balance;
   }
 }
+
+
+@keyframes popUp {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-pop {
+  animation: popUp 1s ease forwards;
+}
+
+@keyframes slideIn {
+  0% { transform: translateY(50%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide {
+  animation: slideIn 1.8s ease forwards;
+}
+
+@keyframes bounceIn {
+  0% { transform: translateY(100%); opacity: 0; }
+  50% { opacity: 1; transform: translateY(-20%); }
+  100% { transform: translateY(0); }
+}
+
+.animate-bounce {
+  animation: bounceIn 1s ease forwards;
+}
