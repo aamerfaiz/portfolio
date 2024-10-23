@@ -18,24 +18,34 @@ export default function Skills() {
             {/* Skills Section */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-2">
                 <div className="flex flex-col items-center">
-                    <Image src={reactlogo} width={40} height={40} alt="ReactJS" className="m-2" />
-                    <div>ReactJS</div>
+                    <div className="w-16 h-16 bg-yellow-400 rounded-full border-4 border-yellow-500 shadow-lg flex items-center justify-center">
+                        <Image src={reactlogo} width={40} height={40} alt="ReactJS"  />
+                    </div>
+                    <div className="mt-2">ReactJS</div>
                 </div>
                 <div className="flex flex-col items-center">
-                    <Image src={nexttlogo} width={40} height={40} alt="NextJS" className="m-2" />
-                    <div>NextJS</div>
+                    <div className="w-16 h-16 bg-yellow-400 rounded-full border-4 border-yellow-500 shadow-lg flex items-center justify-center">
+                        <Image src={nexttlogo} width={40} height={40} alt="NextJS"  />
+                    </div>
+                    <div className="mt-2">NextJS</div>
                 </div>
                 <div className="flex flex-col items-center">
-                    <Image src={jslogo} width={40} height={40} alt="JavaScript" className="m-2" />
-                    <div>JavaScript</div>
+                    <div className="w-16 h-16 bg-yellow-400 rounded-full border-4 border-yellow-500 shadow-lg flex items-center justify-center">
+                        <Image src={jslogo} width={40} height={40} alt="JavaScript"  />
+                    </div>
+                    <div className="mt-2">JavaScript</div>
                 </div>
                 <div className="flex flex-col items-center">
-                    <Image src={csslogo} width={40} height={40} alt="CSS" className="m-2" />
-                    <div>CSS</div>
+                    <div className="w-16 h-16 bg-yellow-400 rounded-full border-4 border-yellow-500 shadow-lg flex items-center justify-center">
+                        <Image src={csslogo} width={40} height={40} alt="CSS" />
+                    </div>
+                    <div className="mt-2">CSS</div>
                 </div>
                 <div className="flex flex-col items-center">
-                    <Image src={htmllogo} width={40} height={40} alt="HTML" className="m-2" />
-                    <div>HTML</div>
+                    <div className="w-16 h-16 bg-yellow-400 rounded-full border-4 border-yellow-500 shadow-lg flex items-center justify-center">
+                        <Image src={htmllogo} width={40} height={40} alt="HTML" />
+                    </div>
+                    <div className="mt-2">HTML</div>
                 </div>
             </div>
         </div>

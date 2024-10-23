@@ -7,7 +7,7 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-@font-face { font-family: 'Oswald'; font-style: regular; font-weight: 400; src: url("./fonts/Oswald-VariableFont_wght.ttf") format('truetype'); }
+@font-face { font-family: 'Oswald'; font-style: regular; font-weight: 400; src: url("./fonts/VT323-Regular.ttf") format('truetype'); }
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -20,7 +20,7 @@ body {
   background: var(--background);
   font-family: Oswald, Helvetica, sans-serif;
   font-weight: 400;
-  font-size: larger;
+  font-size: x-large;
 }
 
 @layer utilities {
