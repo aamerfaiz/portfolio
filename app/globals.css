@@ -7,7 +7,7 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-@font-face { font-family: 'Oswald'; font-style: regular; font-weight: 400; src: url("./fonts/Oswald-VariableFont_wght.ttf") format('truetype'); }
+@font-face { font-family: 'Oswald'; font-style: regular; font-weight: 400; src: url("./fonts/Kanit/Kanit-Light.ttf") format('truetype'); }
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -21,6 +21,7 @@ body {
   font-family: Oswald, Helvetica, sans-serif;
   font-weight: 400;
   font-size: larger;
+  cursor: url('../public/images/cursor.png'), auto;
 }
 
 @layer utilities {
