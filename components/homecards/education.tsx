@@ -13,8 +13,8 @@ export default function Education() {
             <div className="flex flex-row justify-between items-center">
                 <Image src={sjclogo} width={75} height={75} alt="College Logo" className="mr-[1vw]" />
                 <div>
-                    <div className="text-base">St. Joseph's College (Autonomous), Bangalore, India</div>
-                    <div className="text-lg">Bachelor's of Computer Applications</div>
+                    <div className="text-base">St. Joseph&apos;s College (Autonomous), Bangalore, India</div>
+                    <div className="text-lg">Bachelor&apos;s of Computer Applications</div>
                     <div className="text-sm">2017-2020</div>
                 </div>
             </div>
