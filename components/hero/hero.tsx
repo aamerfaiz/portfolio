@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profilepic from "../../public/images/AamerPhoto3.png"
+import profilepic from "../../public/images/Aamer.png"
 
 export default function Hero() {
     return (
