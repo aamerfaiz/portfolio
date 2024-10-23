@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import Image from 'next/image';
 
 export default function NoOppositeContent() {
     return (
@@ -11,7 +11,7 @@ export default function NoOppositeContent() {
                     <p className="text-sm text-gray-400">Austin, USA (Remote)</p>  {/* Added location */}
                     <p className="text-sm text-gray-400">June 2021 - Present</p>
                 </div>
-                <img src="/path-to-company-logo.png" alt="Company Logo" className="w-12 h-12" />
+                <Image src="/path-to-company-logo.png" width={30} height={30} alt="Company Logo" className="w-12 h-12" />
             </div>
 
             <div className="text-sm text-gray-600 mb-4">

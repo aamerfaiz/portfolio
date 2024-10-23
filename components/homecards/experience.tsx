@@ -1,5 +1,3 @@
-import Image from "next/image";
-import worklogo from "../../public/images/working.png"
 import BasicTimeline from "../muicomponents/timeline";
 
 export default function Experience() {
