@@ -4,7 +4,7 @@ import profilepic from "../../public/images/AamerPhoto3.png"
 export default function Hero() {
     return (
         <div >
-            <div className="hidden md:flex lg:flex flex-col lg:flex-row justify-end py-[2vh] px-[10vh] items-center pb-0 rounded-md mx-[2vw] overflow-hidden bg-herobg bg-left-bottom">
+            <div className="hidden md:flex lg:flex flex-col md:flex-row lg:flex-row justify-end py-[2vh] px-[10vh] items-center pb-0 rounded-md mx-[2vw] overflow-hidden bg-herobg bg-left-bottom">
 
                 <div className="flex flex-col justify-between items-end mh-[10vh]">
                     <h1 className="font-bold text-6xl pb-5 animate-pop" style={{ animationDelay: '0.2s' }}>Aamer Faiz</h1>
