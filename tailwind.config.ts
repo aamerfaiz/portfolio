@@ -14,7 +14,9 @@ const config: Config = {
         babypink: "#F4C2C2"
       },
       backgroundImage:{
-        'herobg': "url('/images/testbg.png')"
+        'herobg': "url('/images/testbg.png')",
+        'cardbg': "url('/images/water.jpg')"
+
       }
     },
   },

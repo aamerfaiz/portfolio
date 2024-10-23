@@ -8,7 +8,7 @@ import htmllogo from "../../public/images/html.svg";
 
 export default function Skills() {
     return (
-        <div className="bg-white text-black rounded-lg shadow-md px-6 py-4 flex flex-col min-h-[20vh] w-full sm:w-[45vw] lg:w-[29vw]">
+        <div className="bg-white text-black grow rounded-lg shadow-md px-6 py-4 flex flex-col min-h-[20vh] w-full sm:w-[45vw] lg:w-[29vw]">
             {/* Header */}
             <div className="flex items-center justify-center mb-4">
                 <Image src={skilllogo} width={40} height={40} alt="Skills" className="mx-2" />

@@ -57,3 +57,16 @@ body {
 .animate-bounce {
   animation: bounceIn 1s ease forwards;
 }
+
+@keyframes wave {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px); /* Adjust height of the wave */
+  }
+}
+
+.animate-wave {
+  animation: wave 1s ease-in-out infinite; /* Adjust timing and duration as needed */
+}
