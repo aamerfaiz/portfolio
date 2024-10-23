@@ -1,6 +1,5 @@
 import Image from "next/image";
 import worklogo from "../../public/images/working.png"
-import sjclogo from "../../public/images/sjc.jpg"
 import BasicTimeline from "../muicomponents/timeline";
 
 export default function Experience() {
