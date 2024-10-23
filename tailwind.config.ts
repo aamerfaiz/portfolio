@@ -11,7 +11,11 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        babypink: "#F4C2C2"
       },
+      backgroundImage:{
+        'herobg': "url('/images/background1.jpg')"
+      }
     },
   },
   plugins: [],
