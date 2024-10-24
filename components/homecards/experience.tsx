@@ -14,7 +14,7 @@ export default function Experience() {
     const [modalDescription, setModalDescription] = useState<string[]>([]);
     const [modalAchievements, setModalAchievements] = useState<string[]>([]); // State for achievements
 
-    let audio = new Audio('/sounds/smb_coin.wav');
+    const audio = new Audio('/sounds/smb_coin.wav');
 
     const handleExperienceClick = (title: string, companyName: string, description: string[], achievements: string[]) => {
         setModalTitle(title);
