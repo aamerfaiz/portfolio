@@ -6,12 +6,14 @@ import React, { useState } from "react";
 export default function Hero() {
     const [isBouncing, setIsBouncing] = useState(false);
 
-    const clickAudio = new Audio('/sounds/smb_jump-small.wav');
 
     const handleImageClick = () => {
         // Play the sound on click
-        clickAudio.play();
-
+        if (typeof window !== "undefined") {
+            // Play the sound on click
+            const clickAudio = new Audio("/sounds/smb_jump-small.wav");
+            clickAudio.play();
+        }
         // Trigger the bounce animation
         setIsBouncing(true);
 

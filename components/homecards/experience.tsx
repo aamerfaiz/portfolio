@@ -14,7 +14,6 @@ export default function Experience() {
     const [modalDescription, setModalDescription] = useState<string[]>([]);
     const [modalAchievements, setModalAchievements] = useState<string[]>([]); // State for achievements
 
-    const audio = new Audio('/sounds/smb_coin.wav');
 
     const handleExperienceClick = (title: string, companyName: string, description: string[], achievements: string[]) => {
         setModalTitle(title);
@@ -22,7 +21,11 @@ export default function Experience() {
         setModalDescription(description);
         setModalAchievements(achievements); // Set achievements
         setModalOpen(true);
-        audio.play()
+        if (typeof window !== "undefined") {
+            // Play the sound on click
+            const clickAudio = new Audio("/sounds/smb_coin.wav");
+            clickAudio.play();
+        }
     };
 
     const handleCloseModal = () => {
