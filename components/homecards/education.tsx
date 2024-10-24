@@ -4,7 +4,7 @@ import sjclogo from "../../public/images/sjc.jpg";
 
 export default function Education() {
     return (
-        <div className="bg-white text-black grow rounded-lg lg:max-w-fit bg-cardbg shadow-md px-6 py-4 flex flex-col min-h-[20vh] w-full md:max-w-md lg:max-w-lg">
+        <div className="bg-white text-black grow rounded-lg lg:max-w-fit bg-cardbg shadow-md px-6 py-4 flex flex-col min-h-[20vh] w-full lg:max-w-lg">
             {/* Header */}
             <div className="flex items-center justify-center mb-4">
                 <div className="flex items-center justify-center bg-white border-4 border-gray-300 rounded-full p-2 shadow-md">

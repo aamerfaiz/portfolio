@@ -51,7 +51,7 @@ export default function Skills() {
   };
 
   return (
-    <div className="bg-white text-black grow bg-cardbg rounded-lg shadow-md px-6 py-4 flex flex-col min-h-[20vh] w-full sm:w-[45vw] lg:w-[29vw]">
+    <div className="bg-white text-black w-full bg-cardbg rounded-lg shadow-md px-6 py-4 flex flex-col min-h-[20vh] w-full lg:w-[36vw]">
       {/* Header */}
       <div className="flex items-center justify-center mb-4">
         <div className="flex items-center justify-center bg-white border-4 border-gray-300 rounded-full p-2 shadow-md">
@@ -104,7 +104,7 @@ export default function Skills() {
           >
             <Image src={tailwindlogo} width={40} height={40} alt="TAILWIND" />
           </div>
-          <div className="mt-2">Tailwind CSS</div>
+          <div className="mt-2 text-center">Tailwind CSS</div>
         </div>
         <div className="flex flex-col items-center">
           <div

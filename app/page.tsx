@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="">
       <Hero />
-      <div className="bg-[#000000] text-white px-[2vw] pt-[2vh] flex flex-col md:flex-row sm:flex-row flex-wrap lg:justify-center sm:justify-start md:justify-center gap-4 mb-[2vh]">
+      <div className="bg-[#000000] text-white px-[2vw] pt-[2vh] flex flex-col flex-wrap md:flex-row sm:flex-row lg:justify-center sm:justify-start md:justify-center gap-4 mb-[2vh]">
         <Experience />
         <Education />
         <Skills />

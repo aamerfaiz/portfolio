@@ -23,7 +23,7 @@ export default function Experience() {
         setModalOpen(true);
         if (typeof window !== "undefined") {
             // Play the sound on click
-            const clickAudio = new Audio("/sounds/smb_coin.wav");
+            const clickAudio = new Audio("/sounds/smb_1-up.wav");
             clickAudio.play();
         }
     };
