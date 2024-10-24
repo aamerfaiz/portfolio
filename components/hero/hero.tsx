@@ -24,7 +24,7 @@ export default function Hero() {
     };
     return (
         <div >
-            <div className="hidden md:flex lg:flex flex-col md:flex-row lg:flex-row justify-end py-[2vh] px-[10vh] items-center pb-0 rounded-md mx-[2vw] overflow-hidden bg-herobg bg-left-bottom">
+            <div className="hidden md:flex lg:flex flex-col md:flex-row lg:flex-row justify-end py-[2vh] px-[10vh] items-center pb-0 rounded-md mx-[2vw] overflow-hidden bg-herobg bg-left-bottom moving-background">
 
                 <div className="flex flex-col justify-between items-end mh-[10vh] bg-white bg-opacity-70 p-4 rounded-lg shadow-md">
                     <h1 className="font-bold text-6xl pb-5 animate-pop" style={{ animationDelay: '0.2s' }}>Aamer Faiz</h1>
@@ -36,7 +36,7 @@ export default function Hero() {
                     className={`${isBouncing ? "animate-bounce" : ""}`}><Image src={profilepic} width={300} height={300} alt="Profile picture" className="cursor-pointer"/></div>
             </div>
 
-            <div className="flex md:hidden lg:hidden flex-col justify-center items-center py-4 px-4 rounded-md mx-2 overflow-hidden bg-herobg bg-left-bottom">
+            <div className="flex md:hidden lg:hidden flex-col justify-center items-center py-4 px-4 rounded-md mx-2 overflow-hidden bg-herobg bg-left-bottom moving-background">
                 <div  onClick={handleImageClick}
                     className={`${isBouncing ? "animate-bounce" : ""}`}>
                     <Image src={profilepic} width={200} height={200} alt="Profile picture" className="object-cover" />

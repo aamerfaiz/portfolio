@@ -87,3 +87,15 @@ body {
 .animate-flip {
   animation: flip 1s ease-in-out;
 }
+
+@keyframes moveBackground {
+  0% {
+    background-position: left bottom;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}
+.moving-background {
+  animation: moveBackground 10s linear infinite;
+}
