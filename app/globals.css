@@ -90,12 +90,43 @@ body {
 
 @keyframes moveBackground {
   0% {
-    background-position: left bottom;
-  }
-  100% {
     background-position: right bottom;
   }
+  100% {
+    background-position: left bottom;
+  }
 }
+
+@keyframes moveBackgroundsm {
+  0% {
+    background-position: 0% bottom; /* Starting position (right) */
+  }
+  100% {
+    background-position: 100% bottom; /* Ending position (left) */
+  }
+}
+
+
+
 .moving-background {
-  animation: moveBackground 10s linear infinite;
+  animation: moveBackground 5s linear infinite; /* Adjust speed as necessary */
+}
+
+.moving-background-mobile {
+  animation: moveBackgroundsm 15s linear infinite; /* Adjust speed as necessary */
+}
+
+
+/* Custom scrollbar styles */
+.scrollbar-visible::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+.scrollbar-visible::-webkit-scrollbar-thumb {
+  background-color: white; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded edges for the scrollbar thumb */
+}
+
+.scrollbar-visible::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.2); /* Color of the scrollbar track */
 }

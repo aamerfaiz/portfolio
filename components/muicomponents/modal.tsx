@@ -21,7 +21,7 @@ const BasicModal = (props: BasicModalProps) => {
       aria-describedby="modal-description"
     >
       <div className="flex items-center justify-center h-full">
-        <div className="bg-[#FF6B6B] rounded-2xl shadow-2xl w-full max-w-6xl p-8 mx-4 max-h-[80vh] overflow-y-auto">
+        <div className="bg-[#FF6B6B] rounded-2xl shadow-2xl w-full max-w-6xl p-8 mx-4 max-h-[80vh] overflow-y-auto scrollbar-visible">
           <h2 className="text-lg font-bold text-white" id="modal-title">
             {title} at {companyName} {/* Display the company name */}
           </h2>

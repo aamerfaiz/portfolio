@@ -36,7 +36,7 @@ export default function Hero() {
                     className={`${isBouncing ? "animate-bounce" : ""}`}><Image src={profilepic} width={300} height={300} alt="Profile picture" className="cursor-pointer"/></div>
             </div>
 
-            <div className="flex md:hidden lg:hidden flex-col justify-center items-center py-4 px-4 rounded-md mx-2 overflow-hidden bg-herobg bg-left-bottom moving-background">
+            <div className="flex md:hidden lg:hidden flex-col justify-center items-center py-4 px-4 rounded-md mx-2 overflow-hidden bg-herobg bg-left-bottom moving-background-mobile">
                 <div  onClick={handleImageClick}
                     className={`${isBouncing ? "animate-bounce" : ""}`}>
                     <Image src={profilepic} width={200} height={200} alt="Profile picture" className="object-cover" />
