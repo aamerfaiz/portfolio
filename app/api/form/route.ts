@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { writeFile, readFile } from 'fs/promises';
+import { writeFile, readFile, mkdir } from 'fs/promises'; // Import mkdir
 import { join } from 'path';
 
 export async function POST(request: Request): Promise<Response> {
@@ -17,6 +17,9 @@ export async function POST(request: Request): Promise<Response> {
     // Define the path to save the JSON data
     const filePath = join(process.cwd(), 'data', 'rsvp.ts');
 
+    // Ensure the directory exists
+    await mkdir(join(process.cwd(), 'data'), { recursive: true });
+
     // Read the existing file content if it exists
     let existingData = [];
     try {
@@ -26,7 +29,7 @@ export async function POST(request: Request): Promise<Response> {
         existingData = JSON.parse(match[1]);
       }
     } catch (error) {
-      console.log(error);
+      // If the file doesn't exist, proceed with an empty array
     }
 
     // Ensure the existingData is an array
