@@ -21,7 +21,7 @@ export async function POST(request: Request): Promise<Response> {
     let existingData = [];
     try {
       const fileContent = await readFile(filePath, 'utf8');
-      const match = fileContent.match(/export const rsvpData = (.*);/s);
+      const match = fileContent.match(/export const rsvpData = ([\s\S]*);/);
       if (match) {
         existingData = JSON.parse(match[1]);
       }
