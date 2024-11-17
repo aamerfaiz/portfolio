@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { google } from 'googleapis';
-import { join } from 'path';
 
 export async function POST(request: Request): Promise<Response> {
   try {
