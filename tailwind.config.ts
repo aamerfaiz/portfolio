@@ -15,7 +15,8 @@ const config: Config = {
       },
       backgroundImage:{
         'herobg': "url('/images/testbg.png')",
-        'cardbg': "url('/images/sky.png')"
+        'cardbg': "url('/images/sky.png')",
+        'kfk':"url('/images/khorfakkan.jpg')"
 
       }
     },
