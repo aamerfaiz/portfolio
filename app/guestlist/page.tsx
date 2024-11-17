@@ -7,7 +7,7 @@ export default function GuestListPage() {
       <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
         {rsvpData.length > 0 ? (
           <ul className="space-y-4">
-            {rsvpData.map((guest: string, index) => (
+            {rsvpData.map((guest: { name: string; email: string; attending: string; additionalpeople: string; pickuprequired: string }, index) => (
               <li
                 key={index}
                 className="border-b border-gray-300 pb-4 last:border-b-0"
