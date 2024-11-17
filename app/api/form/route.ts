@@ -26,7 +26,7 @@ export async function POST(request: Request): Promise<Response> {
         existingData = JSON.parse(match[1]);
       }
     } catch (error) {
-      // If the file doesn't exist, proceed with an empty array
+      console.log(error);
     }
 
     // Ensure the existingData is an array

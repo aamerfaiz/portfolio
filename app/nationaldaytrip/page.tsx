@@ -1,5 +1,4 @@
 "use client"
-import Image from 'next/image';
 import { useState, FormEvent } from 'react';
 
 type FormData = {
