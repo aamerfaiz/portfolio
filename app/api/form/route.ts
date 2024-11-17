@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { writeFile, readFile, mkdir } from 'fs/promises'; // Import mkdir
+import { google } from 'googleapis';
 import { join } from 'path';
 
 export async function POST(request: Request): Promise<Response> {
@@ -7,51 +7,56 @@ export async function POST(request: Request): Promise<Response> {
     // Read the body and parse it as JSON
     const data = await request.json();
 
-    // Check if the data is an object or a list
-    if (typeof data !== 'object' || data === null) {
+    if (
+      typeof data !== 'object' ||
+      data === null ||
+      !('name' in data) ||
+      !('email' in data) ||
+      !('attending' in data) ||
+      !('additionalpeople' in data) ||
+      !('pickuprequired' in data)
+    ) {
       return NextResponse.json({
-        message: 'Invalid data format: expected an object or a list of objects.',
+        message: 'Invalid data format: expected valid fields in object.',
       });
     }
 
-    // Define the path to save the JSON data
-    const filePath = join(process.cwd(), 'data', 'rsvp.ts');
+    // Load service account credentials
+    const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS as string);
 
-    // Ensure the directory exists
-    await mkdir(join(process.cwd(), 'data'), { recursive: true });
+    // Set up the Google Sheets API client
+    const auth = new google.auth.GoogleAuth({
+      credentials,
+      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    });
 
-    // Read the existing file content if it exists
-    let existingData = [];
-    try {
-      const fileContent = await readFile(filePath, 'utf8');
-      const match = fileContent.match(/export const rsvpData = ([\s\S]*);/);
-      if (match) {
-        existingData = JSON.parse(match[1]);
-      }
-    } catch (error) {
-        console.log(error)
-      // If the file doesn't exist, proceed with an empty array
-    }
+    const sheets = google.sheets({ version: 'v4', auth });
+    const spreadsheetId = '1jyGLdSGGv9A3wqJUiU0HkOAr3QtX_A56bDs9TfKHZxo'; // Replace with your Google Sheet ID
 
-    // Ensure the existingData is an array
-    if (!Array.isArray(existingData)) {
-      existingData = [];
-    }
+    // Prepare the data for writing (assuming the data is an object)
+    const values = [[
+      data.name,
+      data.email,
+      data.attending,
+      data.additionalpeople,
+      data.pickuprequired,
+    ]];
 
-    // Add the new data to the existing data
-    existingData.push(data);
+    // Append the new row to the Google Sheet
+    await sheets.spreadsheets.values.append({
+      spreadsheetId,
+      range: 'Sheet1!A:E', // Adjust this range based on your sheet layout
+      valueInputOption: 'USER_ENTERED',
+      requestBody: {
+        values,
+      },
+    });
 
-    // Convert updated data to a text representation
-    const jsonContent = `export const rsvpData = ${JSON.stringify(existingData, null, 2)};`;
-
-    // Write the updated JSON data to the file
-    await writeFile(filePath, jsonContent, 'utf8');
-
-    // Return a success response
     return NextResponse.json({
-      message: 'Data saved successfully',
+      message: 'Data saved successfully to Google Sheet',
     });
   } catch (error) {
+    console.error('Error saving data to Google Sheet:', error);
     return NextResponse.json({
       message: 'Failed to process JSON file',
       error: (error as Error).message,
