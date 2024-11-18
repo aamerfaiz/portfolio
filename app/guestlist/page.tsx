@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-// Define the type for a guest record
 interface Guest {
   name: string;
   email: string;
@@ -12,7 +11,6 @@ interface Guest {
 }
 
 export default function GuestListPage() {
-  // State to hold the list of guests
   const [guestList, setGuestList] = useState<Guest[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -36,28 +34,40 @@ export default function GuestListPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-3xl font-bold text-center mb-8">Guest List</h1>
-      <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
+    <div className="min-h-screen bg-gray-100 p-6 sm:p-10">
+      <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Guest List</h1>
+      <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         {loading ? (
-          <p className="text-center text-gray-500">Loading...</p>
+          <p className="text-center text-gray-500 py-8">Loading...</p>
         ) : guestList.length > 0 ? (
-          <ul className="space-y-4">
+          <ul className="divide-y divide-gray-200">
             {guestList.map((guest, index) => (
               <li
                 key={index}
-                className="border-b border-gray-300 pb-4 last:border-b-0"
+                className="p-6 flex flex-col sm:flex-row sm:justify-between items-start sm:items-center space-y-4 sm:space-y-0"
               >
-                <p className="text-lg font-semibold">Name: {guest.name}</p>
-                <p className="text-md text-gray-600">Email: {guest.email}</p>
-                <p className="text-md text-gray-600">Attending: {guest.attending}</p>
-                <p className="text-md text-gray-600">Additional People: {guest.additionalpeople}</p>
-                <p className="text-md text-gray-600">Pickup Required: {guest.pickuprequired}</p>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-gray-800">{guest.name}</h3>
+                  <p className="text-sm text-gray-500">Email: {guest.email}</p>
+                  <p className="text-sm text-gray-500">Additional People: {guest.additionalpeople}</p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="text-sm">
+                    <span className={guest.attending === "Yes" ? "text-green-500 font-semibold" : "text-red-500 font-semibold"}>
+                      {guest.attending === "Yes" ? "Attending" : "Not Attending"}
+                    </span>
+                  </div>
+                  <div className="text-sm">
+                    <span className={guest.pickuprequired === "Yes" ? "text-yellow-500 font-semibold" : "text-gray-400"}>
+                      {guest.pickuprequired === "Yes" ? "Pickup Required" : "No Pickup"}
+                    </span>
+                  </div>
+                </div>
               </li>
             ))}
           </ul>
         ) : (
-          <p className="text-center text-gray-500">No guests have RSVPed yet.</p>
+          <p className="text-center text-gray-500 py-8">No guests have RSVPed yet.</p>
         )}
       </div>
     </div>
