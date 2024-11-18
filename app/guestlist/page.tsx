@@ -53,13 +53,13 @@ export default function GuestListPage() {
                 </div>
                 <div className="flex items-center space-x-4">
                   <div className="text-sm">
-                    <span className={guest.attending === "Yes" ? "text-green-500 font-semibold" : "text-red-500 font-semibold"}>
-                      {guest.attending === "Yes" ? "Attending" : "Not Attending"}
+                    <span className={guest.attending === "yes" ? "text-green-500 font-semibold" : "text-red-500 font-semibold"}>
+                      {guest.attending === "yes" ? "Attending" : "Not Attending"}
                     </span>
                   </div>
                   <div className="text-sm">
-                    <span className={guest.pickuprequired === "Yes" ? "text-yellow-500 font-semibold" : "text-gray-400"}>
-                      {guest.pickuprequired === "Yes" ? "Pickup Required" : "No Pickup"}
+                    <span className={guest.pickuprequired === "yes" ? "text-yellow-500 font-semibold" : "text-gray-400"}>
+                      {guest.pickuprequired === "yes" ? "Pickup Required" : "No Pickup"}
                     </span>
                   </div>
                 </div>
