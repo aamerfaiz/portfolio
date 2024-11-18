@@ -48,7 +48,6 @@ export default function GuestListPage() {
               >
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-gray-800">{guest.name}</h3>
-                  <p className="text-sm text-gray-500">Email: {guest.email}</p>
                   <p className="text-sm text-gray-500">Additional People: {guest.additionalpeople}</p>
                 </div>
                 <div className="flex items-center space-x-4">
