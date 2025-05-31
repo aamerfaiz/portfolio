@@ -1,5 +1,4 @@
 import { google } from "googleapis";
-import { JWT } from "google-auth-library";
 
 const sheets = google.sheets("v4");
 
@@ -16,7 +15,6 @@ const VOTING_SHEET_ID = process.env.VOTING_SHEET_ID!;
 const REGISTERED_USERS_SHEET_ID = process.env.REGISTERED_USERS_SHEET_ID!;
 
 // Sheet names
-const REGISTRATION_SHEET = "Registrations";
 const VOTE_SHEET = "Voting";
 
 // Fetch emails of registered users from registration sheet
