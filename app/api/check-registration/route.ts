@@ -13,7 +13,16 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ isRegistered: true });
   } catch (error: unknown) {
-    console.error("Error checking registration:", error);
-    return NextResponse.json({ isRegistered: false, message: "Server error" }, { status: 500 });
+    if (error instanceof Error) {
+      console.error("Error checking registration:", error.message);
+    } else {
+      console.error("Error checking registration:", error);
+    }
+  
+    return NextResponse.json(
+      { isRegistered: false, message: "Server error" },
+      { status: 500 }
+    );
   }
+  
 }

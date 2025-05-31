@@ -23,8 +23,17 @@ export async function POST(req: Request) {
   
       return NextResponse.json({ success: true });
     } catch (error: unknown) {
-      console.error("API Error:", error.message || error);
-      return NextResponse.json({ success: false, message: "Server error" }, { status: 500 });
-    }
+        if (error instanceof Error) {
+          console.error("API Error:", error.message);
+        } else {
+          console.error("API Error:", error);
+        }
+      
+        return NextResponse.json(
+          { success: false, message: "Server error" },
+          { status: 500 }
+        );
+      }
+      
   }
   
