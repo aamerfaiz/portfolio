@@ -64,7 +64,7 @@ export const submitVote = async (
     });
 
     console.log("Vote submitted successfully");
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("submitVote error:", err.message);
     throw err;
   }
