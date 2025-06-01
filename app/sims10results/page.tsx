@@ -51,7 +51,7 @@ export default function ResultsPage() {
     useEffect(() => {
         const fetchVotes = async () => {
             try {
-                const res = await fetch("/api/get-results");
+                const res = await fetch(`/api/get-results?timestamp=${Date.now()}`);
                 const data = await res.json();
                 const votes = data.voteCounts;
 

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getVotesFromSheet } from "@/lib/googleSheets";
+export const dynamic = "force-dynamic"; // Next.js 13+ app router
 
 export async function GET() {
   try {
