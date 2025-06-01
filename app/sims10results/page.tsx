@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import aamer from "../../public/images/AamerVote.jpeg";
@@ -11,7 +11,7 @@ import sushanth from "../../public/images/Sushanth.jpeg";
 interface Candidate {
     id: number;
     name: string;
-    image: any;
+    image: StaticImageData;
     slogan: string;
     votes?: number;
 }
