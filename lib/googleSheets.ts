@@ -76,3 +76,32 @@ export const submitVote = async (
   
 };
 
+// Get vote counts per candidate from the voting sheet
+export const getVotesFromSheet = async (): Promise<Record<number, number>> => {
+  await auth.authorize();
+
+  const res = await sheets.spreadsheets.values.get({
+    auth,
+    spreadsheetId: VOTING_SHEET_ID,
+    range: `${VOTE_SHEET}!B2:B`, // Assuming column B stores candidateId
+  });
+
+  const rows = res.data.values;
+
+  const voteCounts: Record<number, number> = {};
+
+  if (!rows || rows.length === 0) {
+    console.warn("No votes found in sheet.");
+    return voteCounts;
+  }
+
+  rows.forEach(([idStr]) => {
+    const id = parseInt(idStr, 10);
+    if (!isNaN(id)) {
+      voteCounts[id] = (voteCounts[id] || 0) + 1;
+    }
+  });
+
+  return voteCounts;
+};
+
